@@ -2,7 +2,7 @@ package edu.sabana.poob.sabanapayroll;
 
 import java.util.UUID;
 
-public class Employee
+public abstract class Employee
 {
     public UUID id;
     public String name;
@@ -25,8 +25,5 @@ public class Employee
     {
         return this.id;
     }
-    public double calculateSalary()
-    {
-        return 1.23;
-    }
+    public abstract double calculateSalary();
 }
