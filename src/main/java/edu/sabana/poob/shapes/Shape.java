@@ -1,6 +1,6 @@
 package edu.sabana.poob.shapes;
 
-public class Shape {
+public abstract class Shape {
 
     private String color;
 
@@ -12,13 +12,8 @@ public class Shape {
         this.color = color;
     }
 
-    public double getArea() {
-        return 0;
-    }
-
-    public double getPerimeter() {
-        return 0;
-    }
+    public abstract double getArea();
+    public abstract double getPerimeter();
 
     @Override
     public String toString() {
