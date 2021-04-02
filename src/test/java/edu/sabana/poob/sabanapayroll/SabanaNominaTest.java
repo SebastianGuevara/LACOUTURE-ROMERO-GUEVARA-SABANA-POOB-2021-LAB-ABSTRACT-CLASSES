@@ -1,7 +1,7 @@
 package edu.sabana.poob.sabanapayroll;
 
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 
@@ -12,7 +12,7 @@ import java.util.UUID;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class SabanaNominaTest 
+public class SabanaNominaTest
 {
     public static SabanaPayroll s1= new SabanaPayroll();
     public static Department d1= new Department("Ingenieria",UUID.randomUUID());
@@ -24,14 +24,11 @@ public class SabanaNominaTest
     public  List<Department> departments = new ArrayList<>();
     public  List<Employee> employees = new ArrayList<>();
 
-
-
-
     @Test
     @DisplayName("GIVEN the ID of an employee by salary WHEN trying to calculate his salary THEN should calculate it")
     public void shouldCalculateEmployeeSalaryBySalary()
     {
-       assertTrue(Double.compare(0.92,es1.calculateSalary()) ==0);
+        assertTrue(Double.compare(0.92,es1.calculateSalary()) ==0);
     }
     @Test
     @DisplayName("GIVEN the ID of an employee by hours WHEN trying to calculate his salary THEN should calculate it")
@@ -89,9 +86,6 @@ public class SabanaNominaTest
         assertTrue(Double.compare(15,s1.calculateDeparmentSalaries(d2.getId())) ==0);
         assertTrue(Double.compare(0.92,s1.calculateDeparmentSalaries(d3.getId())) ==0);
 
-
-
-        
     }
     @Test
     @DisplayName("GIVEN a university WHEN trying to calculate his salary THEN should calculate it")
@@ -129,9 +123,9 @@ public class SabanaNominaTest
     }
 
 
-        
 
 
 
-    
+
+
 }
