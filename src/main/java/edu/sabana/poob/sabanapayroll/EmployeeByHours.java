@@ -18,5 +18,5 @@ public class EmployeeByHours extends Employee {
     @Override
     public String toString() {
 
-        return super.toString()+String.format(" salario %s $, pago por horas", this.calculateSalary());    }
+        return String.format("%s %s, departamento %s, ", this.name, this.lastName, this.department.getName() )+String.format(" salario %s $, pago por horas", this.calculateSalary());    }
 }

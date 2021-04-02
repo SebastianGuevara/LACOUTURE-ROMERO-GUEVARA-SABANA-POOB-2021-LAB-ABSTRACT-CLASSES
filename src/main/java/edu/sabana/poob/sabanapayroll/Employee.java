@@ -17,13 +17,12 @@ public abstract class Employee
         this.department=department;
     }
     @Override
-    public String toString()
-    {
-        return String.format("%s %s, departamento %s, ", this.name, this.lastName, this.department.getName() );
-    }
+    public abstract String toString();
+
     public UUID getId()
     {
         return this.id;
     }
     public abstract double calculateSalary();
+
 }
