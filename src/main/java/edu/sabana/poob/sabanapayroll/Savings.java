@@ -6,16 +6,20 @@ public class Savings extends BankAccount {
 
     @Override
     public double getDepositDiscount() {
-        return 0;
+        return DEPOSIT_DISCOUNT;
+    }
+    public double getANNUAL_INTEREST_RATE(){
+        return ANNUAL_INTEREST_RATE;
     }
 
     /**
-     * Calcula el porcentaje de intereses y los deposita en la cuenta sin ningñun descuento.
+     * Calcula el porcentaje de intereses y los deposita en la cuenta sin ningun descuento.
      * <br><br>
      * @return el porcentaje depositado en la cuenta.
      */
-    public double depositMontlyInterest(){
-        return 0;
+    public double depositMontlyInterest()
+    {
+        return 0.01*(getBalance()+DEPOSIT_DISCOUNT);
     }
 
 }

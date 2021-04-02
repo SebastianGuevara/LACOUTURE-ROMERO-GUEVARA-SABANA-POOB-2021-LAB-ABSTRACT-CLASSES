@@ -119,6 +119,10 @@ public class SabanaNominaTest
         d2.setEmployees(employees);
         d3.setEmployees(employees);
         s1.printPayroll();
+    }
+    @Test
+    public void shouldDepositToEmployee()
+    {
 
     }
 
