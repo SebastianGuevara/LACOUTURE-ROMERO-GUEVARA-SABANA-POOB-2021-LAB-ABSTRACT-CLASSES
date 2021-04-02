@@ -10,6 +10,10 @@ public class EmployeeBySalary extends Employee {
         super(name, lastName, department);
         this.salary = salary;
     }
+    public EmployeeBySalary(String name, String lastName, Department department,double salary, BankAccount account) {
+        super(name, lastName, department, account);
+        this.salary = salary;
+    }
     @Override
     public double calculateSalary()
     {

@@ -1,6 +1,8 @@
 package edu.sabana.poob.sabanapayroll;
 
 public class Savings extends BankAccount {
+    public final double DEPOSIT_DISCOUNT = 2000;
+    public final double ANNUAL_INTEREST_RATE = 0.01;
 
     @Override
     public double getDepositDiscount() {

@@ -8,6 +8,7 @@ public abstract class Employee
     public String name;
     public String lastName;
     public Department department;
+    private BankAccount account;
     
     public Employee(String name, String lastName, Department department)
     {
@@ -15,6 +16,14 @@ public abstract class Employee
         this.lastName=lastName;
         this.id=UUID.randomUUID();
         this.department=department;
+    }
+    public Employee(String name, String lastName, Department department,BankAccount acccount)
+    {
+        this.name=name;
+        this.lastName=lastName;
+        this.id=UUID.randomUUID();
+        this.department=department;
+        this.account=account;
     }
     @Override
     public abstract String toString();
@@ -25,4 +34,7 @@ public abstract class Employee
     }
     public abstract double calculateSalary();
 
+    public BankAccount getAccount() {
+        return account;
+    }
 }

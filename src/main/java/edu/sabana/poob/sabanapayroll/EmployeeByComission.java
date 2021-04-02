@@ -9,6 +9,10 @@ public class EmployeeByComission extends Employee {
         super(name, lastName, department);
         this.productos=productos;
     }
+    public EmployeeByComission(String name, String lastName, Department department, int productos, BankAccount account) {
+        super(name, lastName, department,account);
+        this.productos=productos;
+    }
     @Override
     public double calculateSalary()
     {

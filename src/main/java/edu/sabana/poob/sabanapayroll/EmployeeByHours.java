@@ -9,6 +9,10 @@ public class EmployeeByHours extends Employee {
         super(name, lastName, department);
         this.hours=hours;
     }
+    public EmployeeByHours(String name, String lastName, Department department,double hours,BankAccount account) {
+        super(name, lastName, department,account);
+        this.hours=hours;
+    }
     @Override
     public double calculateSalary()
     {
