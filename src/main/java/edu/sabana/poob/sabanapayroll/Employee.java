@@ -17,7 +17,7 @@ public abstract class Employee
         this.id=UUID.randomUUID();
         this.department=department;
     }
-    public Employee(String name, String lastName, Department department,BankAccount acccount)
+    public Employee(String name, String lastName, Department department,BankAccount account)
     {
         this.name=name;
         this.lastName=lastName;

@@ -1,11 +1,13 @@
 package edu.sabana.poob.sabanapayroll;
 
 import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.UUID;
 
@@ -121,9 +123,20 @@ public class SabanaNominaTest
         s1.printPayroll();
     }
     @Test
-    public void shouldDepositToEmployee()
+    public void shouldCalculateEmployeeBalance()
     {
+        BankAccount b1;
+        Checking c1 = new Checking();
+        Savings s1 = new Savings();
+        Department d1 = new Department("Surtifruver",UUID.randomUUID());
+        EmployeeBySalary e1 = new EmployeeBySalary("AAAAAAAAAAAGUACATE","PA HOY",d1,10,c1=new Checking());
+        EmployeeByHours e2 = new EmployeeByHours("PIÑA","MIA",d1,10,s1);
 
+        c1.deposit(10000);
+        Assertions.assertEquals(5000,e1.getAccount().getBalance());
+
+        s1.deposit(10000);
+        Assertions.assertEquals(8000,e2.getAccount().getBalance());
     }
 
 

@@ -74,4 +74,20 @@ public class SabanaPayroll
     {
         this.departments=depa;
     }
+    public boolean depositToEmployee()
+    {
+        return false;
+    }
+    public double calculateEmployeeBalance()
+    {
+        for (Department d: this.departments)
+        {
+
+        }
+        return 1.32;
+    }
+    public double calculateAllEmployeeBalance()
+    {
+
+    }
 }
