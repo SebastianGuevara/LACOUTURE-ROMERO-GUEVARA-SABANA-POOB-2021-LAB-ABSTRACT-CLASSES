@@ -3,6 +3,7 @@ package edu.sabana.poob.shapes;
 public class Circle extends Shape {
 
     private double radius;
+    public static final double PI = Math.PI;
 
     public Circle() {
         this.radius = 1.0;
@@ -18,7 +19,29 @@ public class Circle extends Shape {
     }
 
     public double getDiameter() {
-        return 0;
+        return this.radius*2;
     }
 
+    @Override
+    public double getArea() {
+        return this.radius*this.radius*PI;
+    }
+
+    @Override
+    public double getPerimeter() {
+        return 2*PI*this.radius;
+    }
+
+    @Override
+    public String toString()
+    {
+        if (this.radius%1==0)
+        {
+            return super.toString()+ " and radius "+(int)this.radius;
+        }
+        else {
+            return super.toString()+ " and radius "+this.radius;
+        }
+
+    }
 }
