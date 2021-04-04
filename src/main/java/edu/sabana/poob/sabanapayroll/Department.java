@@ -60,6 +60,19 @@ public class Department
        
        return es;
     }
+    public Employee findEmployeeId(UUID employeeId)
+    {
+        Employee e1 = null;
+        for (Employee e:this.employees)
+        {
+            if (e.id==employeeId)
+            {
+                e1 = e;
+            }
+
+        }
+        return e1;
+    }
     public String getName() {
         return name;
     }

@@ -9,6 +9,7 @@ public class SabanaPayroll
     public static String a = "";
     double salary=0;
     private List<Department> departments=new ArrayList<>();
+    private double employeeBalance;
 
     /**
      * Calculates the salary of an specific employee
@@ -74,9 +75,17 @@ public class SabanaPayroll
     {
         this.departments=depa;
     }
-    public boolean depositToEmployee()
+    public boolean depositToEmployee(UUID employeeId, double amount)
     {
-        return false;
+        boolean result=false;
+        for (Department d : this.departments)
+        {
+            if(employeeId.equals(d.findEmployeeId(employeeId).getId()))
+            {
+                result=d.findEmployeeId(employeeId).getAccount().deposit(amount);
+            }
+        }
+        return result;
     }
     public double calculateEmployeeBalance()
     {
@@ -88,6 +97,6 @@ public class SabanaPayroll
     }
     public double calculateAllEmployeeBalance()
     {
-
+        return 2.123;
     }
 }
