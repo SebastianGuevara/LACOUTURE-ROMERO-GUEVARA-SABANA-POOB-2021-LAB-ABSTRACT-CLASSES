@@ -124,18 +124,24 @@ public class SabanaNominaTest
     @Test
     public void shouldCalculateEmployeeBalance()
     {
+        SabanaPayroll sa1 = new SabanaPayroll();
         BankAccount b1;
         Checking c1 = new Checking();
         Savings s1 = new Savings();
         Department d1 = new Department("Surtifruver",UUID.randomUUID());
         EmployeeBySalary e1 = new EmployeeBySalary("AAAAAAAAAAAGUACATE","PA HOY",d1,10,c1=new Checking());
         EmployeeByHours e2 = new EmployeeByHours("PIÑA","MIA",d1,10,s1);
+        departments.add(d1);
+        employees.add(e1);
+        employees.add(e2);
+        d1.setEmployees(employees);
+        sa1.setDepartments(departments);
 
         c1.deposit(10000);
-        Assertions.assertEquals(5000,e1.getAccount().getBalance());
+        Assertions.assertEquals(5000,sa1.calculateEmployeeBalance(e1.getId()));
 
         s1.deposit(10000);
-        Assertions.assertEquals(8000,e2.getAccount().getBalance());
+        Assertions.assertEquals(8000,sa1.calculateEmployeeBalance(e2.getId()));
     }
     @Test
     public void shouldDepositToEmployee()
@@ -175,6 +181,29 @@ public class SabanaNominaTest
         assertFalse(sa1.depositToEmployee(e1.getId(),5000));
         assertFalse(sa1.depositToEmployee(e2.getId(),2000));
     }
+    @Test
+    public void shouldCalculateAllEmployeesBalance()
+    {
+        SabanaPayroll sa1 = new SabanaPayroll();
+        BankAccount b1;
+        Checking c1 = new Checking();
+        Savings s1 = new Savings();
+        Department d1 = new Department("Surtifruver",UUID.randomUUID());
+        EmployeeBySalary e1 = new EmployeeBySalary("AAAAAAAAAAAGUACATE","PA HOY",d1,10,c1=new Checking());
+        EmployeeByHours e2 = new EmployeeByHours("PIÑA","MIA",d1,10,s1);
+        departments.add(d1);
+        employees.add(e1);
+        employees.add(e2);
+        d1.setEmployees(employees);
+        sa1.setDepartments(departments);
+        c1.deposit(10000);
+        s1.deposit(10000);
+
+        Assertions.assertEquals(13000,sa1.calculateAllEmployeeBalance());
+
+
+    }
+
 
 
 

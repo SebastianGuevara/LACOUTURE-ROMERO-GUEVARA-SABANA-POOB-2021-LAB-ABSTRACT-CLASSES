@@ -76,4 +76,8 @@ public class Department
     public String getName() {
         return name;
     }
+    public List<Employee> getEmployees()
+    {
+        return this.employees;
+    }
 }

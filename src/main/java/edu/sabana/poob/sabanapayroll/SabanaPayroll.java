@@ -87,16 +87,29 @@ public class SabanaPayroll
         }
         return result;
     }
-    public double calculateEmployeeBalance()
+    public double calculateEmployeeBalance(UUID employeeId)
     {
-        for (Department d: this.departments)
+        double result=0;
+        for (Department d : this.departments)
         {
-
+            if(employeeId.equals(d.findEmployeeId(employeeId).getId()))
+            {
+                result=d.findEmployeeId(employeeId).getAccount().getBalance();
+            }
         }
-        return 1.32;
+        return result;
     }
     public double calculateAllEmployeeBalance()
     {
-        return 2.123;
+        double result = 0;
+        for (Department d: this.departments)
+        {
+            for (Employee e: d.getEmployees())
+            {
+                result+=e.getAccount().getBalance();
+            }
+
+        }
+        return result;
     }
 }
